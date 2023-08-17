@@ -173,7 +173,7 @@ def main(options):
     # Write model-graph to Tensorboard
     if options['mode']=='train':
         dataiter = iter(train_loader)
-        image_temp, _ = dataiter.next()
+        image_temp, _ = next(dataiter)
         writer.add_graph(model, image_temp.to(device))
         
         ###############################################################
